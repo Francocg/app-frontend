@@ -1,0 +1,119 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  .example-is-mobile .example-toolbar {
+    position: fixed;
+    /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+    z-index: 2;
+  }
+  
+  h1.example-app-name {
+    margin-left: 8px;
+  }
+  
+  .example-sidenav-container {
+    /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+       causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+    flex: 1;
+  }
+  
+  .example-is-mobile .example-sidenav-container {
+    /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+       `<body>` to be our scrolling element for mobile layouts. */
+    flex: 1 0 auto;
+  }
+
+
+  /* -------------------------------------------------------------------------------------------------------- */
+
+  
+
+  a,
+  a:hover,
+  a:focus{
+      color:inherit;
+      text-decoration: none;
+  }
+  
+  #sidebar-menu ul li{
+      list-style:none;
+  }
+  
+  
+  #sidebar-menu{
+      min-width:250px;
+      max-width: 250px;
+      color:gray;
+  }
+
+ .sub-menu{
+    min-width:100px;
+    max-width: 190px;
+    margin-left: 35px;
+    
+  }
+  
+  #opciones{
+      cursor: pointer;
+      display: contents;
+  }
+  
+  #sidebar-full{
+      background-color: #ffffffc2;
+  }
+  
+  #sidebar-menu ul li .design{
+      padding:18px;
+      font-size: 15px;
+      margin-right: 20px;
+      margin-left: -32px;
+      display: block;
+  }
+  
+  #sidebar-menu ul li.active>a{
+      color:rgb(0, 0, 0);
+      font-weight: bolder;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.421);
+      
+  }
+  
+  
+  .design{
+      background: #fff;
+      margin-top: 15px;
+      border-radius: 0px 30px 30px 0px;
+      box-shadow: 2px 2px 5px rgb(230, 230, 230);
+  }
+
+
+  .design-submenu{
+    background: #fff;
+    margin-top:10px;
+    margin-left: 20px;
+    height: 45px;
+    border-radius: 30px 0px 0px 30px;
+    box-shadow: 2px 2px 5px rgb(230, 230, 230);
+}
+  
+ #contenedor{
+    background-color: white; 
+    padding: 15px; 
+    border-radius: 3px;
+    margin-top: 5px;
+    
+  }
+
+  
+  .menu li.active ul{
+    display:block;
+  }
+  
+
+  .sub-menu{padding:0; display:none; list-style:none;}

@@ -1,0 +1,50 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+    <mat-toolbar style="background-color: #264653;" class="example-toolbar">
+
+        <button mat-icon-button *ngIf="open" (click)="sidenav.toggle(); mostrarIcon()">
+            <mat-icon>menu</mat-icon>
+        </button>
+
+        <button mat-icon-button *ngIf="!open" (click)="sidenav.toggle(); mostrarIcon()">
+            <mat-icon>forward</mat-icon>
+        </button>
+
+        <span class="spacer"></span>
+
+        
+        <p style="color: white; margin-top:10px; font-size: 18px; margin-right:15px">{{usuario.nombres}}  {{usuario.apellidos}}</p>
+        <img [src]="usuario.foto" style="width: 55px; height:45px; border-radius: 50%; margin-right:15px">
+        <mat-icon aria-hidden="false" style="color: white; cursor:pointer" (click)="logout()">logout</mat-icon>
+
+
+    </mat-toolbar>
+
+    <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0"
+        style="background-color: #F4F4F4;">
+        <mat-sidenav #sidenav opened="true" [mode]="mobileQuery.matches ? 'over' :  'side'"
+            [fixedInViewport]="mobileQuery.matches" fixedTopGap="56" style="background-color: #F4F4F4; border: none;">
+            <div class="sidebar">
+                <div id="sidebar-menu">
+                    <ul class="menu">
+                        <li routerLinkActive="active" routerLink="archivos" id="opciones" (click)="ocultarSidebar()">
+                            <a class="design">Archivos</a>
+                        </li>
+                        <li routerLinkActive="active" routerLink="email" id="opciones" (click)="ocultarSidebar()">
+                            <a class="design">Email</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </mat-sidenav>
+
+        <mat-sidenav-content>
+
+            <div class="container-fluid" id="contenedor">
+                <router-outlet></router-outlet>
+            </div>
+
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>
+

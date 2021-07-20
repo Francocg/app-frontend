@@ -1,0 +1,56 @@
+<div class="container" *ngIf="cargando">
+    <div class="row">
+        <div class="col">
+            <div class="loader"></div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid mt-5" *ngIf="!cargando">
+    <div class="row">
+        <div>
+            <input type="file" class="upload" (change)=subirArchivo($event.target.files[0])>
+            <span class="spacer"></span>
+            <button mat-raised-button color="primary" (click)="aceptarUpload()"><mat-icon style="font-size:20px; margin-right:8px">backup</mat-icon>Subir Archivo</button>
+            <br><br>        
+        </div>
+        
+
+        <div class="col col-sm12 col-md-12 col-lg-12 col-xl-12">
+            <div class="table-responsive-sm">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Item</th>
+                            <th scope="col">Nombre del Archivo</th>
+                            <th scope="col">Tipo</th>
+                            <th scope="col">Dirección </th>
+                            <th scope="col">Editar</th>
+                            <th scope="col">Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let archivo of archivos; let i = index">
+                            <th scope="row">{{ i + 1}}</th>
+                            <td>{{ archivo.nombre }}</td>
+                            <td>{{ archivo.tipo }}</td>
+                            <td><a href="{{ archivo.url }}" target="_blank">
+                                    <mat-icon id="file">launch</mat-icon>
+                                </a></td>
+                            <td>
+                                <mat-icon id="file" style="cursor: pointer;" (click)="uploadArchivo(archivo)">update</mat-icon>
+                            </td>
+                            <td>
+                                <mat-icon id="file" style="cursor: pointer" (click)="deleteArchivo(archivo.idarchivo)">delete</mat-icon>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+                <div style="margin-left:468px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
