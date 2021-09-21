@@ -6,6 +6,7 @@ import { LoginForm } from '../interface/login-form.interface';
 import { tap, map, catchError, delay } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
 import { Usuario } from '../models/Usuario.,model';
+import {Correo} from '../models/correo'
 
 const endpoint = environment.endpoint;
 
@@ -44,6 +45,13 @@ export class AuthService {
       catchError( error => of(false))
     );
 
+  }
+
+  
+  ruta = 'http://localhost:3000/api/mail'
+
+  createEmail(correo: Correo):Observable<Correo>{
+    return this.http.post<Correo>(this.ruta + '/send',correo)
   }
 
 }

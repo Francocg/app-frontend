@@ -13,7 +13,8 @@ import { ErrorComponent } from './error/error.component';
   imports: [
     CommonModule,
     MaterialModule,
-    RouterModule
+    RouterModule,
+    
   ]
 })
 export class SharedModule { }

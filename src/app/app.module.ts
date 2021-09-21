@@ -8,6 +8,8 @@ import { PagesModule } from './pages/pages.module';
 import { MaterialModule } from './material.module';
 import { AuthModule } from './auth/auth.module';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,9 @@ import { HttpClientModule } from '@angular/common/http';
     NoopAnimationsModule,
     PagesModule,
     MaterialModule,
+    FormsModule,
+    ReactiveFormsModule,
+    CommonModule
 
   ],
   providers: [],

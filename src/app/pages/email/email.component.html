@@ -1,1 +1,32 @@
-<p>email works!</p>
+<form [formGroup]="forms" class="example-form" >
+    <mat-form-field class="example-full-width" appearance="fill">
+      <h1><mat-label>Envio de correos</mat-label></h1>
+      <input matInput disabled value="Google">
+    </mat-form-field>
+  
+    <form class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Destinatario</mat-label>
+          <input required formControlName="destinatario" matInput #message maxlength="256" placeholder=""  >
+        
+          <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+        </mat-form-field>
+      </form>
+  
+      <form class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Titulo</mat-label>
+          <input required formControlName="titulo" matInput #message maxlength="256" placeholder=""  formControlName="titulo">
+         
+          <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+        </mat-form-field>
+      </form>
+  
+      <form class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Mensaje</mat-label>
+            <textarea required formControlName="mensaje" matInput placeholder="" ></textarea>
+          </mat-form-field>
+      </form>
+      <button mat-raised-button color="primary" (click)="enviarCorreo()">Enviar</button>
+  </form>
